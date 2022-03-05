@@ -26,19 +26,14 @@ def prediction():
         logger.debug("Starting Prediction process.")
 
         input_data = [i for i in request.form.values()]
-        print("Captured input data.")
         logger.debug("Captured input data.")
         obj = Model(input_data)
-        print("Model object created.")
         logger.debug("Model object created.")
         obj.generate_dataframe()
-        print("Input DataFrame generated.")
         logger.debug("Input DataFrame generated.")
         obj.preprocessor()
-        print("Data preprocessed.")
         logger.debug("Data preprocessed.")
         y_hat = obj.soft_voting_prediction()
-        print("Received prediction.")
         logger.debug("Received prediction.")
         #print(y_hat)
         result = "Try Again"
@@ -51,7 +46,6 @@ def prediction():
         return render_template('index.html', result=result)
 
     except Exception as e:
-        print("Error occurred while predicting.", e)
         logger.debug("Error occurred while predicting.")
         return render_template('index.html')
 
