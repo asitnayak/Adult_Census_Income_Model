@@ -1,0 +1,17 @@
+2022-03-05 18:39:52,021:__main__:Starting Prediction process.
+2022-03-05 18:39:52,025:__main__:Captured input data.
+2022-03-05 18:39:52,821:__main__:Model object created.
+2022-03-05 18:39:52,836:__main__:Input DataFrame generated.
+2022-03-05 18:39:52,897:__main__:Data preprocessed.
+2022-03-05 18:39:53,170:__main__:Received prediction.
+2022-03-05 18:50:47,512:__main__:Starting Prediction process.
+2022-03-05 18:50:47,515:__main__:Captured input data.
+2022-03-05 18:50:48,185:__main__:Model object created.
+2022-03-05 18:50:48,201:__main__:Input DataFrame generated.
+2022-03-05 18:50:48,225:__main__:Data preprocessed.
+2022-03-05 18:50:48,436:__main__:Received prediction.
+2022-03-05 18:51:56,492:__main__:Starting Prediction process.
+2022-03-05 18:51:56,494:__main__:Captured input data.
+2022-03-05 18:51:56,897:__main__:Model object created.
+2022-03-05 18:51:56,915:__main__:Input DataFrame generated.
+2022-03-05 18:51:56,929:__main__:Error occurred while predicting.

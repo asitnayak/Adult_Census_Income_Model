@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Census Income Category Prediction</title>
+    <style>
+        body {
+
+        background-image: url("https://www.econlib.org/wp-content/uploads/2018/02/distribution-of-income.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1366px 768px;
+
+            }
+
+        th, td,tr {
+
+        font-family: Comic Sans MS;
+        font-size: 15px;
+        border-radius: 10px;
+        height: 30px;
+
+                }
+        select,input {
+
+        border-radius: 10px;
+
+                }
+
+    </style>
+</head>
+<body>
+<div style="float:left; width:50%;">
+        <form action="/predict" method="post">
+            <br><table style="margin-left:100px" >
+                <caption style="font-family:Monospace;border-radius:10px;color: white;background-color:Tomato;font-size: 14.5px"><h2>Individual Details Form</h2></caption>
+                <tr style="background-color:LightGray">
+                    <td>Age : </td><td>
+                            <input type="number" id="age" name="age" min="15" max="99">
+                                    </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Work class : </td><td>
+                                                <input type="radio" id="private" name="work_class" value="Private">
+                                                <label for="private">Private</label><br>
+                                                <input type="radio" id="govt" name="work_class" value="govt">
+                                                <label for="govt">Government</label><br>
+                                                <input type="radio" id="self" name="work_class" value="Self_employed">
+                                                <label for="self">Self Employed</label><br>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Final weight by Population Division : </td><td>
+                    <input type="number" id="weight" name="weight" >
+                                                                </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Education : </td><td>
+                                                <select name="education" id="Online_Order1">
+                                                    <option>----------</option>
+                                                    <option value="Doctorate">Doctorate</option>
+                                                    <option value="Prof-school">School Prof.</option>
+                                                    <option value="Masters">Masters</option>
+                                                    <option value="Bachelors">Bachelors</option>
+                                                    <option value="associates">Associates</option>
+                                                    <option value="HS-grad">High School Grad.</option>
+                                                    <option value="Some-college">Some College</option>
+                                                    <option value="school">School</option>
+
+                                                </select>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Marital Status : </td><td>
+                                                <select name="marital_status" id="Online_Order2">
+                                                    <option>----------</option>
+                                                    <option value="married">Married</option>
+                                                    <option value="Never-married">Never married</option>
+                                                    <option value="Divorced">Divorced</option>
+                                                    <option value="separated">Separated</option>
+
+                                                </select>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Occupation : </td><td>
+                                                <select name="occupation" id="Online_Order23">
+                                                    <option>----------</option>
+                                                    <option value="Prof-specialty">Prof. specialty</option>
+                                                    <option value="Craft-repair">Craft repair</option>
+                                                    <option value="Exec-managerial">Exec. managerial</option>
+                                                    <option value="Adm-clerical">Adm clerical</option>
+                                                    <option value="Sales">Sales</option>
+                                                    <option value="Other-service">Other service</option>
+                                                    <option value="Machine-op-inspct">Machine op inspect</option>
+                                                    <option value="Transport-moving">Transport moving</option>
+                                                    <option value="Handlers-cleaners">Handlers cleaners</option>
+                                                    <option value="Farming-fishing">Farming-fishing</option>
+                                                    <option value="Tech-support">Tech support</option>
+                                                    <option value="Protective-serv">Protective service</option>
+                                                    <option value="Priv-house-serv">Private house service</option>
+                                                    <option value="Armed-Forces">Armed Forces</option>
+
+                                                </select>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Individual’s relation in family : </td><td>
+                                                <select name="relationship" id="Online_Order27">
+                                                    <option>----------</option>
+                                                    <option value="Husband">Husband</option>
+                                                    <option value="Wife">Wife</option>
+                                                    <option value="Unmarried">Unmarried</option>
+                                                    <option value="Own-child">Owns child</option>
+                                                    <option value="Other-relative">Other relative</option>
+
+                                                </select>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Race : </td><td>
+                                                <input type="radio" id="white" name="race" value="White">
+                                                <label for="white">White</label><br>
+                                                <input type="radio" id="black" name="race" value="Black">
+                                                <label for="black">Black</label><br>
+                                                <input type="radio" id="other" name="race" value="other">
+                                                <label for="other">Other</label><br>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Sex : </td><td>
+                                                <input type="radio" id="male" name="sex" value="Male">
+                                                <label for="male">Male</label><br>
+                                                <input type="radio" id="female" name="sex" value="Female">
+                                                <label for="female">Female</label><br>
+                                         </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Capital Gain : </td><td>
+                    <input type="number" id="quantity4" name="capital_gain">
+                                        </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Capital Loss : </td><td>
+                    <input type="number" id="quantity3" name="capital_loss">
+                                        </td>
+                </tr>
+
+
+                <tr style="background-color:LightGray">
+                    <td>Working hours for week : </td><td>
+                            <input type="number" id="whours" name="whours" min="1" max="99">
+                                                      </td>
+                </tr>
+                <tr style="background-color:LightGray">
+                    <td>Country : </td><td>
+                                                <input type="radio" id="us" name="country" value="United-States">
+                                                <label for="us">USA</label><br>
+                                                <input type="radio" id="non_us" name="country" value="non_US">
+                                                <label for="non_us">Non USA</label><br>
+                                         </td>
+                </tr>
+
+            </table>
+            <center><input type="submit" style="background-color:Green;color:white;padding: 9px 80px;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)"></center>
+        </form>
+</div>
+
+<div style="float:left; width:50%;">
+
+    <center><h2 style="color:#00e6e6;font-size: 30px;font-family:Monospace ">Income Category Prediction</h2></center>
+    <center><h2 style="color:white;font-size: 40px;margin-top: 45px;font-family:Monospace ">{{ result }}</h2></center>
+
+</div>
+
+</body>
+</html>
