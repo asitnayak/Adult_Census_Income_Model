@@ -48,7 +48,7 @@ class Model:
             logger.debug("Exiting generate_dataframe successfully !!!")
 
         except Exception as e:
-            print("Error occurred inside generate_dataframe of Model class.")
+            print("Error occurred inside generate_dataframe of Model class.", e)
             logger.debug("Error occurred inside generate_dataframe of Model class.")
             raise e
 
@@ -65,7 +65,7 @@ class Model:
             logger.debug("Exiting preprocessor successfully !!!")
 
         except Exception as e:
-            print("Error occurred inside preprocessor of Model class.")
+            print("Error occurred inside preprocessor of Model class.", e)
             logger.debug("Error occurred inside preprocessor of Model class.")
             raise e
 
@@ -105,6 +105,6 @@ class Model:
             return y_hat
 
         except Exception as e:
-            print("Error occurred inside soft_voting_prediction of Model class.")
+            print("Error occurred inside soft_voting_prediction of Model class.", e)
             logger.debug("Error occurred inside soft_voting_prediction of Model class.")
             raise e

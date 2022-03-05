@@ -50,8 +50,8 @@ def prediction():
 
         return render_template('index.html', result=result)
 
-    except:
-        print("Error occurred while predicting.")
+    except Exception as e:
+        print("Error occurred while predicting.", e)
         logger.debug("Error occurred while predicting.")
         return render_template('index.html')
 
