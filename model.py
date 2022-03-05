@@ -1,3 +1,6 @@
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 import logging
 import pickle
