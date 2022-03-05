@@ -20,6 +20,7 @@ warnings.filterwarnings('ignore')
 
 class Model:
     def __init__(self, input_data):
+        print("Created Model object.")
         logger.debug("Created Model object.")
 
         self.input_data = input_data
@@ -37,6 +38,7 @@ class Model:
 
     def generate_dataframe(self):
         try:
+            print("Inside generate_dataframe. Generating DataFrame out of the input data.")
             logger.debug("Inside generate_dataframe. Generating DataFrame out of the input data.")
 
             input_df = pd.DataFrame(columns=self.columns)
@@ -46,11 +48,13 @@ class Model:
             logger.debug("Exiting generate_dataframe successfully !!!")
 
         except Exception as e:
+            print("Error occurred inside generate_dataframe of Model class.")
             logger.debug("Error occurred inside generate_dataframe of Model class.")
             raise e
 
     def preprocessor(self):
         try:
+            print("Inside preprocessor. Preprocessing the input dataframe.")
             logger.debug("Inside preprocessor. Preprocessing the input dataframe.")
 
             self.df.loc[:, self.num] = self.scalar.transform(self.df[self.num])
@@ -61,11 +65,13 @@ class Model:
             logger.debug("Exiting preprocessor successfully !!!")
 
         except Exception as e:
+            print("Error occurred inside preprocessor of Model class.")
             logger.debug("Error occurred inside preprocessor of Model class.")
             raise e
 
     def soft_voting_prediction(self):
         try:
+            print("Inside soft_voting_prediction. Starting prediction.")
             logger.debug("Inside soft_voting_prediction. Starting prediction.")
 
             zeroes = []
@@ -91,7 +97,7 @@ class Model:
             ones = np.array(ones)
 
             y_proba = [zeroes.mean(), ones.mean()]
-            #print(y_proba)
+            print(y_proba)
             y_hat = y_proba.index(max(y_proba))
 
             logger.debug("Exiting soft_voting_prediction successfully !!!")
@@ -99,5 +105,6 @@ class Model:
             return y_hat
 
         except Exception as e:
+            print("Error occurred inside soft_voting_prediction of Model class.")
             logger.debug("Error occurred inside soft_voting_prediction of Model class.")
             raise e

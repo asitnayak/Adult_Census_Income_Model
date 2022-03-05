@@ -17,3 +17,10 @@
 2022-03-05 18:51:56,915:model:Exiting generate_dataframe successfully !!!
 2022-03-05 18:51:56,915:model:Inside preprocessor. Preprocessing the input dataframe.
 2022-03-05 18:51:56,928:model:Error occurred inside preprocessor of Model class.
+2022-03-06 00:15:04,746:model:Created Model object.
+2022-03-06 00:15:35,192:model:Inside generate_dataframe. Generating DataFrame out of the input data.
+2022-03-06 00:15:36,479:model:Exiting generate_dataframe successfully !!!
+2022-03-06 00:15:36,480:model:Inside preprocessor. Preprocessing the input dataframe.
+2022-03-06 00:15:36,907:model:Exiting preprocessor successfully !!!
+2022-03-06 00:15:36,908:model:Inside soft_voting_prediction. Starting prediction.
+2022-03-06 00:15:37,689:model:Exiting soft_voting_prediction successfully !!!
